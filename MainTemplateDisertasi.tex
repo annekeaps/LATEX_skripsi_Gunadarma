@@ -1,0 +1,224 @@
+%*******************************************************************************************
+% File ini merupakan file template LaTEX untuk penulisan Disertasi pada Universitas Gunadarma Tahun 2018
+%% Programmer  : Robby Kurniawan Harahap
+%% E-mail  : robby_kurniawan@staff.gunadarma.ac.id
+%% Pembuatan program template makalah ini dibuat dengan menggunakan :
+%% Linux Opensuse Leap 42.3
+%% texstudio versi 2.12.10 dan kile
+%% TeX Live 2016/TeX Live for SUSE Linux
+%% acrobat reader atau okular
+
+%*******************************************************************************************
+
+%berikut langkah-langkah untuk mendapatkan hasil akhir Disertasi
+%================================================================
+%Untuk pengguna texstudio (Linux dan Windows) :
+% buka template, MainTemplateDisertasi.tex
+% run compile atau tekan tombol f9 pada keyboard untuk mendapatkan hasil
+
+%Untuk pengguna texmaker (Linux dan Windows):
+% buka template, MainTemplateDisertasi.tex
+% run compile untuk mendapatkan hasil
+
+%Untuk pengguna kile:
+% buka template, MainTemplateDisertasi.tex
+% run compile PDFLatex untuk mendapatkan hasil
+
+%berikut ini langkah-langkah untuk mendapatkan hasil akhir disertasi
+
+%==============================================================
+% Untuk platform Windows, berikut software yang diperlukan :
+% 1. MiKTeX (Latex versi Windows). Dapat didownload dari situs http://miktex.org/
+% 2. WinEdt (dapat didownload dari http://www.winedt.com
+% 3. ghostscript
+% 4. gimp untuk mengedit gambar
+% 5. Adobe reader atau foxit reader
+
+%==============================================================
+% 
+%  berikut ini langkah-langkah untuk mendapatkan hasil akhir disertasi menggunakan  WinEdt :
+%  tekan tombol Latex
+%  tekan tombol bibtex
+%  tekan tombol makeindex
+%  tekan tombol Latex
+%  tekan tombol Latex
+%  tekan tombol Pdf Latex/Pdf Texify
+%=======================================================================================================
+% jika terjadi masalah dalam penulisan silahkan hubungi programmer 
+%% E-mail  : robby_kurniawan@staff.gunadarma.ac.id
+
+\documentclass[a4paper,12pt,oneside]{disertasi}
+
+\usepackage[indonesian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{multind}
+\usepackage{rotating} %for rotate/sideway text
+\usepackage{subfig} %for make floating sub-figure
+\usepackage{natbib}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage{float}
+ \usepackage{lscape}
+ \usepackage{pseudocode}
+ \usepackage{listings}
+ \usepackage{url}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage[linktocpage]{hyperref}
+\usepackage{supertabular}
+\usepackage{adjustbox}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage[acronym,nomain,nonumberlist]{glossaries}
+\usepackage[acronym]{glossaries}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{color,soul}
+\usepackage{flexisym}
+\usepackage{gensymb}
+\usepackage{url}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{pifont}
+
+%\makeindex{subject}
+\centerchapter
+\makeatletter
+\onehalfspacing
+%\doublespacing
+\makeatother
+\parindent 3.0em
+%===================================================================
+\setlength{\textwidth}{15.0cm}
+\setlength{\evensidemargin}{2.5cm} % outer/right margin
+%\setlength{\topmargin}{0.3cm}      % top margin
+\setlength{\footskip}{2.5cm}         % distance between text and foot
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-\topmargin}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{-\headsep}
+\addtolength{\textheight}{-\footskip}
+\addtolength{\textheight}{-4cm}   % bottom margin
+%==============================================================================
+%% Bagian Pemenggalan Kata Yang Tidak Sempurna
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \hyphenatino{} %% kata yang dipenggal dengan tak sempurna
+%==============================================================================
+%% bagian ubah fungsi daftar algoritma
+\renewcommand*{\listalgorithmcfname}{DAFTAR ALGORITMA}
+\renewcommand*{\algorithmcfname}{Algoritma}
+\renewcommand*{\algorithmautorefname}{Algoritma}
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
+
+\renewcommand{\headrulewidth}{2pt}
+
+\begin{document}
+\nocite{*}
+
+%#start bagian administrasi #==================================================
+% bagian muka sebelum isi, umumnya halaman administrasi, kalau tidak digunakan
+% dapat diberikan tanda % didepannya
+
+%cover
+\pagestyle{empty}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\include{cover}
+% \include{cover_judul}
+
+%halaman lembar pengesahan, abstraksi, kata pengantar
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}%nilai halaman utk awal dari abstrak s/d ucapan terimakasih dlm romawi
+\include{originalitas}
+\include{lembar_persetujuan}% menggabungkan file lembar pengesahan
+\include{abstrak}% menggabungkan file abstraksi
+\include{abstract}
+%menggabungkan file CV atau riwayat hidup ringkas
+%\include{cv}
+\include{katapengantar}% mengabungkan file kata pengantar
+
+%# akhir bagian administrasi # ==========================================
+
+% #mulai membuat daftar isi, daftar gambar dan  daftar tabel # ==========
+%\setcounter{page}{8} %set nilai halaman sesuai urutannya
+
+% membuat daftar isi
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\tableofcontents{}
+
+%% membuat daftar tabel
+\listoftables
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+
+%membuat daftar gambar
+\listoffigures
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}%masih masalah
+
+% \listofalgorithms
+% \addcontentsline{toc}{chapter}{DAFTAR ALGORITMA}
+% \include{istilah}
+
+\include{daftarlampiran}
+
+% #akhir membuat daftar isi, daftar gambar dan  daftar tabel # ==========
+
+% # mulai bagian isi # ==================================================
+
+\newpage
+\pagestyle{headings}
+\pagenumbering{arabic} % jenis huruf arabic
+\setcounter{page}{1} %mulai dari halaman 1
+
+ \pagestyle{fancy}
+
+ \fancyhead[LO,RE]{\slshape \leftmark}
+\rhead{\thepage}
+\cfoot{}
+
+\input{bab1/Bab1_Pendahuluan.tex} %Bab 1
+
+\input{bab2/Bab2_TinjauanPustaka.tex} %Bab 2
+
+\input{bab3/Bab3_Metodologi.tex} %Bab 3
+
+\input{bab4/Bab4_HasilDiskusi.tex} %Bab 4
+
+\input{bab5/Bab5_Kesimpulan.tex} %Bab 5
+\newpage
+% diatas menunjukkan SubDir/nama file tex, bisa ditambah/dikurang sesuai kebutuhan
+
+% # akhir bagian isi # ==================================================
+
+% # mulai bagian Daftar Pustaka # ============================================
+\thispagestyle{empty}
+\renewcommand\bibname{DAFTAR PUSTAKA}
+
+
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA} %memasukkan daftar pustaka di daftar isi
+%\addtocontents{toc}{\contentsline {chapter}{\numberline {}{DAFTAR PUSTAKA}}{}}
+%\Urlmuskip=0mu plus 1mu\relax
+\bibliographystyle{agsm}
+\bibliography{MainTemplateDisertasi} %file menyimpan bibtex
+
+% # akhir bagian referensi # ============================================
+
+\newpage
+\pagestyle{plain}
+\thispagestyle{empty}
+\include{lampiran}
+%\printindex{subject}{INDEKS}
+\thispagestyle{empty}
+\end{document}
+%% Finish----------------
