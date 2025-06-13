@@ -1,0 +1,44 @@
+\chapter{TINJAUAN PUSTAKA}
+\label{cha:2-TelaahPustaka}
+
+
+Contoh penggunaan dan pemanggilan Tabel \ref{tab:dataset}.
+
+\begin{table}[H]
+    
+    \captionsetup{justification=centering}
+	\caption{Result of localization for each dataset (in number of images)}
+	\label{tab:dataset}
+    \begin{adjustbox}{width=1\textwidth}
+    
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+    \hline
+    
+    \multirow{2}{*}{ Dataset} & \multicolumn{2}{c|}{With Outliers in 4m acc} & \multicolumn{2}{c|}{Without Outliers in 4m acc} & \multicolumn{3}{c|}{With Outliers in 1m acc} & \multicolumn{1}{c|}{Without Outliers in 1m acc}                     \\ \cline{2-9}
+      & Localized      & Unlocalized & Localized         & Unlocalized & Localized      & Unlocalized & Localized         & Unlocalized \\ \hline
+      
+         Arc de Triomphe & 111  &  29  &  111  &  28  &  103  &  37  &  103  &  36  \\
+    Barcelona       & 184  &  16  &  184  &  11  &  156  &  44  &  156  &  39  \\
+    Cambridge       & 87  &  13  &  87  &  13  &  81  &  19  &  81  &  19  \\
+    CERN            & 74  &  26  &  74  &  19  &  65  &  35  &  65  &  28  \\
+    Chicago         & 136  &  14  &  136  &  12  &  121  &  29  &  121  &  27  \\ 
+    Dubai           & 87  &  13  &  87  &  9  &  74  &  26  &  74  &  22  \\ 
+    Havana          & 95  &  5  &  95  &  5  &  89  &  11  &  89  &  11  \\ 
+    Indonesia       & 63  &  27  &  63  &  11  &  52  &  38  &  52  &  22  \\
+    Kitakyushu      & 90  &  10  &  90  &  8  &  76  &  24  &  76  &  22  \\
+    Marina Bay      & 205  &  15  &  205  &  13  &  178  &  42  &  178  &  40  \\ 
+    Marrakesh       & 97  &  3  &  97  &  3  &  88  &  12  &  88  &  12  \\
+    Moscow          & 98  &  2  &  98  &  2  &  90  &  10  &  90  &  10  \\
+    Munich          & 90  &  10  &  90  &  8  &  79  &  21  &  79  &  19  \\
+    Oslo            & 92  &  8  &  92  &  7  &  83  &  17  &  83  &  16  \\
+    Paris           & 35  &  65  &  35  &  41  &  30  &  70  &  30  &  46  \\ 
+    Qatar           & 183  &  17  &  183  &  11  &  162  &  38  &  162  &  32  \\
+    Shanghai        & 142  &  8  &  142  &  6  &  130  &  20  &  130  &  18  \\
+    Sydney          & 92  &  8  &  92  &  8  &  82  &  18  &  82  &  18  \\
+    Syria           & 94  &  6  &  94  &  5  &  87  &  13  &  87  &  12  \\
+    Vienna          & 83  &  17  &  83  &  14  &  75  &  25  &  75  &  22  \\ \hline
+    Total           & 2138 & 312 & 2138 & 234 & 1901 & 549  & 1901 & 471 \\ \hline
+ 
+    \end{tabular}
+    \end{adjustbox}
+\end{table}
